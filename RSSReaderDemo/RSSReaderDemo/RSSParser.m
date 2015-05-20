@@ -71,6 +71,19 @@
     }
 }
 
+//Sorting the title's film
+-(NSArray*) createSortedArray:(NSMutableArray*) unsortedArray
+{
+    NSArray * sortedArray = [[NSArray alloc] init];
+    
+    NSSortDescriptor *sortByName = [NSSortDescriptor sortDescriptorWithKey:@"title"
+                                                                 ascending:YES];
+    NSArray *sortDescriptors = [NSArray arrayWithObject:sortByName];
+    sortedArray = [unsortedArray sortedArrayUsingDescriptors:sortDescriptors];
+    
+    return sortedArray;
+}
+
 #pragma mark - Public Methods
 /**
  *  @method Start the process to create the connection with
@@ -117,7 +130,7 @@
 
 - (void)parserDidStartDocument:(NSXMLParser *)parser
 {
-    //Datasource
+    //Initialize the Datasource
     _allVideos = [[NSMutableArray alloc] init];
 }
 
@@ -196,7 +209,9 @@
     {
         //NSLog(@"ALLVIDEOS: %@", _allVideos);
         
-        [self.delegate endingParsingWithSource:_allVideos];
+        NSArray *sortedArray = [self createSortedArray:[_allVideos mutableCopy]] ;
+        
+        [self.delegate endingParsingWithSource:[sortedArray mutableCopy]];
     }
 }
 
