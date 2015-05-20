@@ -25,6 +25,9 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    //starting point
+    [self loadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -52,6 +55,8 @@
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     
     _activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    
+    [_activityIndicator setFrame:CGRectMake(self.view.frame.size.width/2 - 20, self.view.frame.size.height/2 -20, 40, 40)];
     
     [self.view addSubview:_activityIndicator];
     
@@ -182,6 +187,9 @@
 -(void) endingParsingWithError:(NSString *) parsingError
 {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    
+    [_activityIndicator stopAnimating];
+    [_activityIndicator removeFromSuperview];
     
     UIAlertView * errorAlert = [[UIAlertView alloc] initWithTitle:@"Error loading content" message:parsingError delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [errorAlert show];

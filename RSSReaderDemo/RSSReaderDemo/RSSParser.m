@@ -15,7 +15,7 @@
 #pragma mark - lifecycle
 
 /**
- * @method intialization method
+ * @method Intialization method
  * @param urlStr URL definition
  *
  */
@@ -24,21 +24,7 @@
     self = [super init];
     if (self)
     {
-        NSURL *url = [NSURL URLWithString:urlStr];
-        
-        
-        
-        // NSXMLParser
-        _xmlParser = [[NSXMLParser alloc] initWithContentsOfURL:url];
-        
-        // Set self as the delegate of the parser so that it will receive the parser delegate methods callbacks.
-        [_xmlParser setDelegate:self];
-        
-        // Enable these features of NSXMLParser.
-        [_xmlParser setShouldProcessNamespaces:NO];
-        [_xmlParser setShouldReportNamespacePrefixes:NO];
-        [_xmlParser setShouldResolveExternalEntities:NO];
-        
+        _url = [NSURL URLWithString:urlStr];
     }
     
     return self;
@@ -107,11 +93,20 @@
     
     NSString *result = [[NSString alloc] initWithData:_rssData encoding:NSUTF8StringEncoding];
     
-    NSLog(@"RESULT : %@\n",result);
+    NSLog(@"RESULT: %@",result);
     
-    _allVideos = [NSMutableArray array];
+    // NSXMLParser
+    _xmlParser = [[NSXMLParser alloc] initWithData:_rssData];
     
-    [self startParse];
+    // Set self as the delegate of the parser so that it will receive the parser delegate methods callbacks.
+    [_xmlParser setDelegate:self];
+    
+    // Enable these features of NSXMLParser.
+    [_xmlParser setShouldProcessNamespaces:NO];
+    [_xmlParser setShouldReportNamespacePrefixes:NO];
+    [_xmlParser setShouldResolveExternalEntities:NO];
+
+    [_xmlParser parse];
     
 }
 

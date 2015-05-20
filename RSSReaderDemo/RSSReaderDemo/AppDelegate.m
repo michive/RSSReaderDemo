@@ -18,8 +18,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    self.rssTableViewController = [[RSSTableViewController alloc] initWithStyle:UITableViewStylePlain];
+    
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:self.rssTableViewController];
+    
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor clearColor];
+    
+    self.window.rootViewController = navController;
+    
     [self.window makeKeyAndVisible];
     return YES;
 }
