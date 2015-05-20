@@ -9,6 +9,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import "RSSParser.h"
+
 @interface RSSTableViewController : UITableViewController
 {
     //List of the films
@@ -16,6 +18,9 @@
     
     //activity indicator
     UIActivityIndicatorView * _activityIndicator;
+    
+    //feed parser
+    RSSParser *_rssParser;
     
 }
 
