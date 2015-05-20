@@ -202,8 +202,6 @@
     
     if ([self.delegate respondsToSelector:@selector(endingParsingWithSource:)])
     {
-        //NSLog(@"ALLVIDEOS: %@", _allVideos);
-        
         NSArray *sortedArray = [self createSortedArray:[_allVideos mutableCopy]] ;
         
         [self.delegate endingParsingWithSource:[sortedArray mutableCopy]];
