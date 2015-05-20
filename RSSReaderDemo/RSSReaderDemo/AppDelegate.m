@@ -1,6 +1,7 @@
 //
 //  AppDelegate.m
 //  RSSReaderDemo
+//  Project for RSS Reader of fandango rss
 //
 //  Created by Michele Verani on 20/05/15.
 //  Copyright (c) 2015 mikydevelop. All rights reserved.
@@ -18,7 +19,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.backgroundColor = [UIColor clearColor];
     [self.window makeKeyAndVisible];
     return YES;
 }

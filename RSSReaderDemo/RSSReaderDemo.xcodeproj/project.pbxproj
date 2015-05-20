@@ -12,6 +12,8 @@
 		2DC5D05D1B0CA0850063FF9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DC5D05C1B0CA0850063FF9A /* Images.xcassets */; };
 		2DC5D0601B0CA0850063FF9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DC5D05E1B0CA0850063FF9A /* LaunchScreen.xib */; };
 		2DC5D06C1B0CA0850063FF9A /* RSSReaderDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC5D06B1B0CA0850063FF9A /* RSSReaderDemoTests.m */; };
+		2DC5D0781B0CA1D10063FF9A /* RSSTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC5D0771B0CA1D10063FF9A /* RSSTableViewController.m */; };
+		2DC5D0791B0CA1D10063FF9A /* RSSTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC5D0771B0CA1D10063FF9A /* RSSTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +37,8 @@
 		2DC5D0651B0CA0850063FF9A /* RSSReaderDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RSSReaderDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DC5D06A1B0CA0850063FF9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2DC5D06B1B0CA0850063FF9A /* RSSReaderDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSSReaderDemoTests.m; sourceTree = "<group>"; };
+		2DC5D0761B0CA1D10063FF9A /* RSSTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSTableViewController.h; sourceTree = "<group>"; };
+		2DC5D0771B0CA1D10063FF9A /* RSSTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +80,7 @@
 		2DC5D0541B0CA0850063FF9A /* RSSReaderDemo */ = {
 			isa = PBXGroup;
 			children = (
+				2DC5D0751B0CA1600063FF9A /* ViewControllers */,
 				2DC5D0591B0CA0850063FF9A /* AppDelegate.h */,
 				2DC5D05A1B0CA0850063FF9A /* AppDelegate.m */,
 				2DC5D05C1B0CA0850063FF9A /* Images.xcassets */,
@@ -109,6 +114,15 @@
 				2DC5D06A1B0CA0850063FF9A /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2DC5D0751B0CA1600063FF9A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				2DC5D0761B0CA1D10063FF9A /* RSSTableViewController.h */,
+				2DC5D0771B0CA1D10063FF9A /* RSSTableViewController.m */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,6 +226,7 @@
 			files = (
 				2DC5D05B1B0CA0850063FF9A /* AppDelegate.m in Sources */,
 				2DC5D0581B0CA0850063FF9A /* main.m in Sources */,
+				2DC5D0781B0CA1D10063FF9A /* RSSTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,6 +234,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DC5D0791B0CA1D10063FF9A /* RSSTableViewController.m in Sources */,
 				2DC5D06C1B0CA0850063FF9A /* RSSReaderDemoTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
