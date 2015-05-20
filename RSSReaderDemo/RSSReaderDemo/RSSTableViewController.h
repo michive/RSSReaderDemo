@@ -22,6 +22,8 @@
     //feed parser
     RSSParser *_rssParser;
     
+    UIBarButtonItem *_reloadBtn;
+    
 }
 
 @end
